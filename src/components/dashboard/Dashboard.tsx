@@ -1,14 +1,15 @@
 import React from "react";
+import FoodItem from "../foodItem/FoodItem";
 
 
-interface FoodItem{
+interface Dish{
     id:number;
     name:string;
     price:number;
     status:string;
 }
 
-const foodItems: FoodItem[]=[
+const foodItems: Dish[]=[
     {id:1, name:'Burger', price:299, status:'in-stock'},
     {id:2, name:'Pizza', price:599, status:'in-stock'},
     {id:3, name:'Noodles', price:199, status:'in-stock'},
@@ -21,10 +22,18 @@ const Dashboard: React.FC<any> = (props) => {
     
     return (
         <React.Fragment>
-            <h1>Dashboard</h1>
-            {foodItems.map(item=> {
-                return <h1>{item.name}</h1>
-            })}
+   
+            <div style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-evenly",
+                alignItems: "center"
+
+            }}>
+                {foodItems.map(item=> {
+                    return <FoodItem item={item}/>
+                })}
+            </div>
         </React.Fragment>
     )
 
