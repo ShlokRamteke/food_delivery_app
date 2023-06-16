@@ -33,6 +33,11 @@ const Dashboard: React.FC<any> = (props) => {
                 gap: "20px",
             }}
             >
+                <h1 style={{
+                    fontFamily: "Bagel Fat One",
+                    fontSize:32,
+                }}
+                >Get Food Delivered </h1>
                 {foodItems.map((item:Dish) => {
                     return <FoodItem item={item}/>
                 })}
