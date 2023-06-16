@@ -1,0 +1,39 @@
+.itemContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+}
+
+.itemTitle {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.itemPrice {
+    font-size: 22px;
+    font-weight: bold;
+    color: green;
+    margin: 5px;
+}
+
+.itemSold{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px;
+    color: rgb(255, 38, 0);
+    
+}
+
+.itemAvailable{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px;
+    color: rgb(26, 56, 223);
+}
