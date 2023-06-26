@@ -1,5 +1,6 @@
 import React from "react";
 import FoodItem from "../foodItem/FoodItem";
+import Navigation from "../topNav/Navigation";
 
 
 interface Dish{
@@ -21,27 +22,38 @@ const foodItems: Dish[]=[
 
 
 const Dashboard: React.FC<any> = (props) => {
-    
+    const isLoggedIn=false;
     return (
         <React.Fragment>
-   
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "20px",
+            <Navigation isLoggedIn={isLoggedIn} user='customer' />
+            <h1 style={{
+                fontFamily: "Bagel Fat One",
+                fontSize:32,
+                textAlign:"center",
+                marginTop: "120px",
             }}
             >
-                <h1 style={{
-                    fontFamily: "Bagel Fat One",
-                    fontSize:32,
+                Menu Items
+            </h1>
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent:"center",
+                    alignItems:"center",
+                    gap: "20px",
+                    padding: "15px",
+                    flexWrap:"wrap",
                 }}
-                >Get Food Delivered </h1>
-                {foodItems.map((item:Dish) => {
+            >
+                    {foodItems.map((item:Dish) => {
                     return <FoodItem item={item}/>
-                })}
+                    })}
+
             </div>
+               
+                
+            
         </React.Fragment>
     )
 
