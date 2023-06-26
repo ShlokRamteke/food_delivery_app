@@ -22,10 +22,10 @@ const foodItems: Dish[]=[
 
 
 const Dashboard: React.FC<any> = (props) => {
-    const isLoggedIn=false;
+    
     return (
         <React.Fragment>
-            <Navigation isLoggedIn={isLoggedIn} user='customer' />
+            <Navigation isLoggedIn={props.isLoggedIn} user='customer' />
             <h1 style={{
                 fontFamily: "Bagel Fat One",
                 fontSize:32,
@@ -51,9 +51,6 @@ const Dashboard: React.FC<any> = (props) => {
                     })}
 
             </div>
-               
-                
-            
         </React.Fragment>
     )
 

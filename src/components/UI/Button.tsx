@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Button: React.FC<{children?: any; color:string}> = (props) => {
+const Button: React.FC<{children?: any; color:string; bgColor?: string }> = (props) => {
     const colorScheme = props.color;
     return (
         <React.Fragment>
             <button 
             style={{
-                backgroundColor: "white",
+                backgroundColor: `${props.bgColor}`,
                 padding:12,
                 border:`1px solid ${colorScheme}`,
                 borderRadius:10,
