@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button: React.FC<{children?: any; color:string; bgColor?: string }> = (props) => {
+const Button: React.FC<{children?: any; color:string; bgColor?: string; label?: string  }> = (props) => {
     const colorScheme = props.color;
     return (
         <React.Fragment>
@@ -12,7 +12,9 @@ const Button: React.FC<{children?: any; color:string; bgColor?: string }> = (pro
                 borderRadius:10,
                 color:`${colorScheme}`,
                 margin: 5,
-            }}>Click me</button>
+            }}>
+                {props.label}
+                </button>
         </React.Fragment>
   );
 };
