@@ -3,6 +3,7 @@ import React, {FC, Fragment, useEffect, useState} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
 import Admin from "./components/admin/Admin";
+import CustomerLogin from "./components/customerLogin/CustomerLogin";
 
 
 
@@ -28,6 +29,7 @@ const App: FC<any> = () => {
         <Route path="/" 
         element={<Dashboard isLoggedIn={isLoggedIn} foodItems={foodItems.length > 0 ? foodItems : [{id :0, name:'N/A', price: 0, status: 'sold'}]} />}/>
         <Route path="/admin" element={<Admin sLoggedIn={isLoggedIn} />} />
+        <Route path="/login" element={<CustomerLogin />} />
       </Routes>
     </BrowserRouter>
   </Fragment>
