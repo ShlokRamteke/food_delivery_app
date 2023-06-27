@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button: React.FC<{
-    children?: any; color:string; bgColor?: string; label?: string; onClick?:()=>{}  }> = (props) => {
+    children?: any; color:string; bgColor?: string; label?: string; onClick?:()=>{}; disabled?: boolean  }> = (props) => {
     const colorScheme = props.color;
     return (
         <React.Fragment>

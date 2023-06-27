@@ -10,13 +10,27 @@ interface Dish{
     status:string;
 }
 
+interface DashboardProps {
+    isLoggedIn: boolean;
+    foodItems: Dish[];
+    addToCart: (item: Dish) => void;
+    cartItemCount: number;
+}
 
-
-const Dashboard: React.FC<any> = (props) => {
+const Dashboard: React.FC<DashboardProps> =  ({ isLoggedIn, foodItems, addToCart, cartItemCount }) => {
+    
+    const handleAddToCart = (item: Dish) => {
+        if (isLoggedIn) {
+          addToCart(item);
+        } else {
+          // Handle logic for not logged in user
+          alert("Please log in to add items to the cart.");
+        }
+      };
     
     return (
         <React.Fragment>
-            <Navigation isLoggedIn={props.isLoggedIn} user='customer' />
+            <Navigation isLoggedIn={isLoggedIn} user='customer' />
             <h1 style={{
                 fontFamily: "Bagel Fat One",
                 fontSize:32,
@@ -37,9 +51,15 @@ const Dashboard: React.FC<any> = (props) => {
                     flexWrap:"wrap",
                 }}
             >
-                    {(props.foodItems as Dish[]).map((item:Dish) => {
-                    return <FoodItem item={item} />
-                    })}
+                   {foodItems.map((item) => (
+                        <FoodItem
+                            key={item.id}
+                            item={item}
+                            addToCart={handleAddToCart}
+                            cartItemCount={cartItemCount}
+                            isLoggedIn={isLoggedIn}
+                        />
+                    ))}
 
             </div>
         </React.Fragment>

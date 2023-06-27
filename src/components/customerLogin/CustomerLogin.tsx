@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from './CustomerLogin.module.css'
-import Button from "../UI/Button";
+
 
 const CustomerLogin: React.FC<any> =props => {
     return < React.Fragment>
